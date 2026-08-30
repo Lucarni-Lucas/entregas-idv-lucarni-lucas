@@ -4,3 +4,8 @@
 
 [node name="Projectile" type="Sprite2D" unique_id=2130496098]
 script = ExtResource("1_n38wy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1193218729]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

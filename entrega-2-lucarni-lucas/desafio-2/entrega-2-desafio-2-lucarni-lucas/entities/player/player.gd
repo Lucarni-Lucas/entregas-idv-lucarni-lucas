@@ -6,6 +6,8 @@ extends Sprite2D
 
 var projectile_container:Node
 
+var velocity
+
 func set_projectile_container(container:Node):
 	cannon.projectile_container = container
 	self.projectile_container = container
