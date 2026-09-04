@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entregas IDV — Lucarni Lucas</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f6f4;
+    --fg: #1b1b1a;
+    --muted: #6b6b66;
+    --card: #ffffff;
+    --border: #e0e0dc;
+    --accent: #3a6ea5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16171a;
+      --fg: #e8e8e4;
+      --muted: #9a9a94;
+      --card: #1f2126;
+      --border: #2e3138;
+      --accent: #7aa7d9;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 3rem 1.25rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 .25rem; }
+  .sub { color: var(--muted); margin: 0 0 2.5rem; }
+  h2 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: var(--muted);
+    margin: 2rem 0 .75rem;
+  }
+  a.card {
+    display: block;
+    padding: 1rem 1.15rem;
+    margin-bottom: .6rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  a.card:hover { border-color: var(--accent); }
+  a.card strong { display: block; color: var(--accent); }
+  a.card span { color: var(--muted); font-size: .875rem; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .8rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Introducción al Desarrollo de Videojuegos</h1>
+  <p class="sub">Lucas Nahuel Lucarni — UNQ</p>
+
+  <h2>Entrega 2</h2>
+  <a class="card" href="entrega-2/desafio-3/">
+    <strong>Desafío 3 — Vectores y Físicas</strong>
+    <span>Jugar en el navegador</span>
+  </a>
+  <a class="card" href="entrega-2/desafio-2/">
+    <strong>Desafío 2</strong>
+    <span>Jugar en el navegador</span>
+  </a>
+
+  <h2>Entrega 1</h2>
+  <a class="card" href="entrega-1/">
+    <strong>Proyecto de la Entrega 1</strong>
+    <span>Jugar en el navegador</span>
+  </a>
+
+  <h2>Entrega 0</h2>
+  <a class="card" href="entrega-0/desafio-1/">
+    <strong>Desafío 1 — Dodge the Creeps</strong>
+    <span>Jugar en el navegador</span>
+  </a>
+
+  <footer>Hecho con Godot 4 · Exportado a HTML5</footer>
+</main>
+</body>
+</html>

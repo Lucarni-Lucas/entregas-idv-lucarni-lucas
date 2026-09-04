@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dnc5muoeyfwah"]
+
+[ext_resource type="PackedScene" uid="uid://vqu8xh4hhedx" path="res://entities/player/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwss7yl8udbui" path="res://assets/textures/background.png" id="2"]
+[ext_resource type="Script" uid="uid://bkmvt4ya2xfm8" path="res://Main.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://bscjwoaotlcqc" path="res://entities/enemies/Turret.tscn" id="4"]
+[ext_resource type="Script" uid="uid://ertnqm8kd3lw" path="res://entities/enemies/TurretsSpawner.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://7ixrgbfhdfe3" path="res://entities/world/floor.tscn" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://dkicvbcy2do8m" path="res://entities/world/cube.tscn" id="7_lgr22"]
+
+[node name="Main" type="Node" unique_id=1941814747]
+script = ExtResource("3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1451331940]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="CanvasLayer" unique_id=1920434015]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Player" parent="." unique_id=2070837090 instance=ExtResource("1")]
+position = Vector2(413.003, 395.272)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=167237033]
+
+[node name="TurretsSpawner" type="Node" parent="." unique_id=19825529]
+script = ExtResource("5")
+turret_scene = ExtResource("4")
+
+[node name="Floor" parent="." unique_id=987253290 instance=ExtResource("6_3dxm6")]
+position = Vector2(400, 514)
+
+[node name="Floor2" parent="." unique_id=984436454 instance=ExtResource("6_3dxm6")]
+position = Vector2(1196, 513)
+
+[node name="Floor3" parent="." unique_id=225846430 instance=ExtResource("6_3dxm6")]
+position = Vector2(1967, 517)
+
+[node name="Cube" parent="." unique_id=1544392238 instance=ExtResource("7_lgr22")]
+position = Vector2(541, 368)
+
+[node name="Cube2" parent="." unique_id=2060461284 instance=ExtResource("7_lgr22")]
+position = Vector2(578, 293)
+
+[node name="Cube3" parent="." unique_id=1763611603 instance=ExtResource("7_lgr22")]
+position = Vector2(616, 369)
