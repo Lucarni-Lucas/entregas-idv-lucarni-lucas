@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://1c4vf4hpp4y0"]
+
+[ext_resource type="Script" uid="uid://bkj5hhu2oxiwc" path="res://src/entities/enemies/Turret.gd" id="2"]
+[ext_resource type="PackedScene" path="res://src/entities/enemies/TurretProjectile.tscn" id="3"]
+[ext_resource type="Script" uid="uid://4dv33508gu4m" path="res://src/entities/enemies/TurretStateMachine.gd" id="3_aag6v"]
+[ext_resource type="SpriteFrames" uid="uid://bjfctxf8wdo5i" path="res://src/entities/enemies/TurretAnimations.tres" id="3_chgy7"]
+[ext_resource type="Script" uid="uid://c608dvbkjj7fs" path="res://src/entities/enemies/DetectionArea.gd" id="4"]
+[ext_resource type="Script" uid="uid://nii0equsow4s" path="res://src/entities/enemies/states/IdleState.gd" id="4_njpiu"]
+[ext_resource type="Texture2D" uid="uid://b1m4ub6md6had" path="res://assets/textures/green_circle.png" id="5"]
+[ext_resource type="Script" uid="uid://0jhc2c20gphn" path="res://src/entities/enemies/states/WalkState.gd" id="5_mf6ap"]
+[ext_resource type="Script" uid="uid://3juhfy5osvc3" path="res://src/entities/enemies/states/AlertState.gd" id="6_5vei5"]
+[ext_resource type="Script" uid="uid://c33e6qdii37lf" path="res://src/entities/enemies/states/DieState.gd" id="7_wkjny"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(19, 25)
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 48.04165
+
+[node name="Turret" type="CharacterBody2D" unique_id=225507935]
+texture_filter = 1
+collision_layer = 4
+script = ExtResource("2")
+speed = 60.0
+wander_radius = Vector2(192, 192)
+projectile_scene = ExtResource("3")
+
+[node name="StateMachine" type="Node" parent="." unique_id=934956352 node_paths=PackedStringArray("character", "start_state", "states_list")]
+script = ExtResource("3_aag6v")
+character = NodePath("..")
+start_state = NodePath("Idle")
+states_list = [NodePath("Idle"), NodePath("Walk"), NodePath("Alert"), NodePath("Die")]
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1903731778]
+script = ExtResource("4_njpiu")
+state_id = "idle"
+
+[node name="IdleTimer" type="Timer" parent="StateMachine/Idle" unique_id=258790415]
+wait_time = 5.0
+one_shot = true
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=2110089635]
+script = ExtResource("5_mf6ap")
+state_id = "walk"
+
+[node name="Alert" type="Node" parent="StateMachine" unique_id=498623664]
+script = ExtResource("6_5vei5")
+state_id = "alert"
+
+[node name="Die" type="Node" parent="StateMachine" unique_id=621263873]
+script = ExtResource("7_wkjny")
+state_id = "die"
+
+[node name="FirePosition" type="Marker2D" parent="." unique_id=1367225017]
+position = Vector2(0, -18.0339)
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=203584295]
+position = Vector2(0, -16)
+sprite_frames = ExtResource("3_chgy7")
+animation = &"go_normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=6765580]
+position = Vector2(0.5, -12.5)
+shape = SubResource("1")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1439129986]
+position = Vector2(0.0428963, -18.0659)
+enabled = false
+target_position = Vector2(0, 0)
+collision_mask = 3
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=20781444]
+position = Vector2(0, -12)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4")
+
+[node name="GreenCircle" type="Sprite2D" parent="DetectionArea" unique_id=1803097571]
+visible = false
+modulate = Color(1, 1, 1, 0.301961)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1037732966]
+shape = SubResource("2")
+
+[connection signal="timeout" from="StateMachine/Idle/IdleTimer" to="StateMachine/Idle" method="_on_idle_timer_timeout"]
+[connection signal="animation_finished" from="Body" to="StateMachine" method="_on_body_animation_finished"]
+[connection signal="body_entered" from="DetectionArea" to="StateMachine" method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="StateMachine" method="_on_detection_area_body_exited"]
