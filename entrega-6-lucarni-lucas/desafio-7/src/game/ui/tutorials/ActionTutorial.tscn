@@ -1,0 +1,117 @@
+[gd_scene load_steps=32 format=3 uid="uid://tigqw850wuuy"]
+
+[ext_resource type="Script" uid="uid://bywf6c6qp7ewr" path="res://src/game/ui/tutorials/ActionTutorial.gd" id="1_0ka2o"]
+[ext_resource type="Texture2D" uid="uid://nmkx5eavai36" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Blanks/Blank_Black_Normal.png" id="2_iynvm"]
+[ext_resource type="Texture2D" uid="uid://cphpdkygx1nxt" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Mouse_Left_Key_Dark.png" id="2_no0rb"]
+[ext_resource type="Texture2D" uid="uid://d22d6xg0gsljn" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Mouse_Right_Key_Dark.png" id="3_7xng6"]
+[ext_resource type="Texture2D" uid="uid://cckoem3qdc8q3" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Mouse_Middle_Key_Dark.png" id="4_58upu"]
+[ext_resource type="Texture2D" uid="uid://bffu681ls28re" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Mouse_Simple_Key_Dark.png" id="5_ln6rj"]
+[ext_resource type="FontFile" path="res://assets/fonts/Default-Small.tres" id="7_7xng6"]
+[ext_resource type="Texture2D" uid="uid://cw8ue67216i1t" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Esc_Key_Dark.png" id="7_mr6od"]
+[ext_resource type="Texture2D" uid="uid://jn0h4ytfjf5y" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Tab_Key_Dark.png" id="8_ckyu7"]
+[ext_resource type="Texture2D" uid="uid://ujaudh1te3gc" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Backspace_Key_Dark.png" id="9_fe8p4"]
+[ext_resource type="Texture2D" uid="uid://lsbohss6wuyh" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Enter_Key_Dark.png" id="10_eauon"]
+[ext_resource type="Texture2D" uid="uid://u36gw43ivh3w" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Insert_Key_Dark.png" id="11_6jubn"]
+[ext_resource type="Texture2D" uid="uid://bdlv4uvxem84" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Del_Key_Dark.png" id="12_vtlj7"]
+[ext_resource type="Texture2D" uid="uid://fhm1bf1t7qj0" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Home_Key_Dark.png" id="13_v54h0"]
+[ext_resource type="Texture2D" uid="uid://dk317k5hqe51b" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/End_Key_Dark.png" id="14_uhni1"]
+[ext_resource type="Texture2D" uid="uid://86sbv0xnaknv" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Arrow_Left_Key_Dark.png" id="15_hu2gw"]
+[ext_resource type="Texture2D" uid="uid://ni0ahckgnjm8" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Arrow_Up_Key_Dark.png" id="16_0gn6e"]
+[ext_resource type="Texture2D" uid="uid://cdjjk6swxqt13" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Arrow_Right_Key_Dark.png" id="17_h6rw3"]
+[ext_resource type="Texture2D" uid="uid://cap65ie2ywq0e" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Arrow_Down_Key_Dark.png" id="18_lu1nn"]
+[ext_resource type="Texture2D" uid="uid://ddhuc4upi1uwl" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Page_Up_Key_Dark.png" id="19_nh8ri"]
+[ext_resource type="Texture2D" uid="uid://dtio24c1k4dmj" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Page_Down_Key_Dark.png" id="20_np4gs"]
+[ext_resource type="Texture2D" uid="uid://eek40mbsye04" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Shift_Key_Dark.png" id="21_m61f7"]
+[ext_resource type="Texture2D" uid="uid://b60bxbfhplmcb" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Ctrl_Key_Dark.png" id="22_11yj4"]
+[ext_resource type="Texture2D" uid="uid://cuicidcct58sb" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Alt_Key_Dark.png" id="23_36yv8"]
+[ext_resource type="Texture2D" uid="uid://bo66upc06h7xv" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Caps_Lock_Key_Dark.png" id="24_r0bhq"]
+[ext_resource type="Texture2D" uid="uid://dgcqrgqnv76tt" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Num_Lock_Key_Dark.png" id="25_o20ec"]
+[ext_resource type="Texture2D" uid="uid://cd5ydkiijs5ba" path="res://assets/textures/ui/Controller&KeyPrompts/Keyboard & Mouse/Dark/Space_Key_Dark.png" id="26_st0og"]
+[ext_resource type="FontFile" uid="uid://i1qus13x2d0u" path="res://assets/fonts/Roboto-Bold.ttf" id="27_ckyu7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_58upu"]
+font = ExtResource("7_7xng6")
+font_color = Color(1, 0.60784316, 0, 1)
+outline_size = 3
+outline_color = Color(0.41568628, 0.27058825, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fe8p4"]
+font = ExtResource("27_ckyu7")
+font_size = 12
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mr6od"]
+texture = ExtResource("2_iynvm")
+region_rect = Rect2(12, 14, 76, 74)
+
+[node name="ActionTutorial" type="Node2D"]
+script = ExtResource("1_0ka2o")
+mouse_buttons_events = Array[int]([1, 2, 3, 4, 5])
+mouse_buttons_textures = Array[Texture]([ExtResource("2_no0rb"), ExtResource("3_7xng6"), ExtResource("4_58upu"), ExtResource("4_58upu"), ExtResource("4_58upu")])
+mouse_button_default_texture = ExtResource("5_ln6rj")
+keys_textures_map = Dictionary[int, Texture]({
+32: ExtResource("26_st0og"),
+4194305: ExtResource("7_mr6od"),
+4194306: ExtResource("8_ckyu7"),
+4194308: ExtResource("9_fe8p4"),
+4194309: ExtResource("10_eauon"),
+4194311: ExtResource("11_6jubn"),
+4194312: ExtResource("12_vtlj7"),
+4194317: ExtResource("13_v54h0"),
+4194318: ExtResource("14_uhni1"),
+4194319: ExtResource("15_hu2gw"),
+4194320: ExtResource("16_0gn6e"),
+4194321: ExtResource("17_h6rw3"),
+4194322: ExtResource("18_lu1nn"),
+4194323: ExtResource("19_nh8ri"),
+4194324: ExtResource("20_np4gs"),
+4194325: ExtResource("21_m61f7"),
+4194326: ExtResource("22_11yj4"),
+4194328: ExtResource("23_36yv8"),
+4194329: ExtResource("24_r0bhq"),
+4194330: ExtResource("25_o20ec")
+})
+
+[node name="Container" type="VBoxContainer" parent="."]
+anchors_preset = -1
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="ActionName" type="Label" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Cut"
+label_settings = SubResource("LabelSettings_58upu")
+horizontal_alignment = 1
+
+[node name="ActionLabel" type="Label" parent="Container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+text = "A"
+label_settings = SubResource("LabelSettings_fe8p4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionTextureDefault" type="PanelContainer" parent="Container/ActionLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -1.0
+offset_right = 4.0
+offset_bottom = 2.0
+size_flags_horizontal = 6
+theme_override_styles/panel = SubResource("StyleBoxTexture_mr6od")
+
+[node name="ActionTextureButton" type="TextureRect" parent="Container"]
+unique_name_in_owner = true
+show_behind_parent = true
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("2_iynvm")
+expand_mode = 3
+stretch_mode = 5
